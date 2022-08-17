@@ -9,6 +9,11 @@ One of the major bottlenecks we faced in lipidomic analysis using MALDI-MS was t
 ### Calculation and Modeling of Lipid Vesicle Formulation ###
 Lipids constitute a major portion of or research efforts both as platforms and targets for our sensors. 
 
+[Vesicle](/assets/Lipid Vesicle.html)
+
+```markdown
+{% include Lipid Vesicle.html %}
+```
 ### Markdown
 
 ```markdown
