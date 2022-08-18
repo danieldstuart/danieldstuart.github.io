@@ -9,12 +9,9 @@ One of the major bottlenecks we faced in lipidomic analysis using MALDI-MS was t
 ### Calculation and Modeling of Lipid Vesicle Formulation ###
 Lipids constitute a major portion of our research efforts both as platforms and targets for our sensors. Lipids are formualted as lipid vesicles with selected constituents for use in self assembled lipid membranes or as curvature mimicking substrates. To visualize and understand how the consituents of these membranes are distributed I have developed an R script to build randomly distributed lipid vesicle models and iterate through many vesicle models to calculate the distance distribution between constituents.
 
-![Distribution of minimum distances between GM1 gangliosides at 0.5% in a 100nm vesicles](/assets/GM1 Distribution.pdf)
+<object data="../assets/Lipid Vesicle.html" width="1000" height="1000" type='application/html'></object>
 
 <object data="../assets/GM1 Distribution.pdf" width="1000" height="1000" type='application/pdf'></object>
-
-<object data="{{ site.url }}{{ site.baseurl }}/assets/GM1 Distribution.pdf" width="1000" height="1000" type="application/pdf"></object>
-
 
 ### Publications ###
 If you are interested in my publications a list is provided below. They can also be found on my ResearchGate or ORCID pages.
