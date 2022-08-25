@@ -1,5 +1,6 @@
 My name is Daniel Stuart and I am a Chemistry PhD Candidate in the Cheng Lab at the University of Calfironia, Riverside. 
-![Headshot photo](/assets/Daniel.jpg)
+
+![Headshot photo](/assets/Daniel.jpg) 
 
 In my time at UCR I have worked on various biosensor development projects. My own projects focus on building platforms to enable sensing of gases and biological molecules. However, I am involved in planning, overseeing, and completing many other projects from sensor materials development to lipidomic analysis of single cellular organisms. I pride myself in my ability to tackle any problem that arises and have gained experience in a wide array of analyses and instrumentation to this end. 
 
