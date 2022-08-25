@@ -1,16 +1,6 @@
 ## About Me ##
 My name is Daniel Stuart and I am a Chemistry PhD Candidate working on various biosensor development projects. My own projects focus on building platforms to enable sensing of gases and biological molecules. However, I am involved in planning, overseeing, and completing many other projects from sensor materials development to lipidomic analysis of single cellular organisms. I pride myself in my ability to tackle any problem that arises and have gained experience in a wide array of analyses and instrumentation to this end. 
 
-If you are interested you will be able to see a little bit about me and some of the projects I have worked on below.
-
-### Processing and ML Analysis of MALDI Spectra ###
-One of the major bottlenecks we faced in lipidomic analysis using MALDI-MS was the need to manually process spectra. As such I built an R script to pull in and process our raw spectra, followed by selection of consistent peaks and combination of resulting peak intensities for implementation in machine learning algorithms. This enables us to quickly process raw spectra and identify peaks of interest for further analysis and identification. 
-
-### Calculation and Modeling of Lipid Vesicle Formulation ###
-Lipids constitute a major portion of our research efforts both as platforms and targets for our sensors. Lipids are formualted as lipid vesicles with selected constituents for use in self assembled lipid membranes or as curvature mimicking substrates. To visualize and understand how the consituents of these membranes are distributed I have developed an R script to build randomly distributed lipid vesicle models and iterate through many vesicle models to calculate the distance distribution between constituents.
-
-<object data="../assets/GM1 Distribution.pdf" width="1000" height="1000" type='application/pdf'></object>
-
 ### Publications ###
 If you are interested in my publications a list is provided below. They can also be found on my ResearchGate or ORCID pages.
 
