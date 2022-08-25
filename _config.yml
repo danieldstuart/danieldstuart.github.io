@@ -8,3 +8,8 @@ timezone: America/Los_Angeles
 header_pages:
   - Projects.md
   - Publications.md
+
+author :
+	  name : Daniel D Stuart
+	  email : daniel.d.stuart1@gmail.com
+	  github : danieldstuart
