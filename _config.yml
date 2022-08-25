@@ -1,6 +1,10 @@
-theme: jekyll-theme-slate
+# Build settings
+theme: minima
+
 title: "Daniel D Stuart"
 
 header_pages:
   - Machine Learning.md
   - Monte Carlo.md
+
+timezone: America/Los_Angeles
