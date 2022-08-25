@@ -1,2 +1,0 @@
-### Processing and ML Analysis of MALDI Spectra ###
-One of the major bottlenecks we faced in lipidomic analysis using MALDI-MS was the need to manually process spectra. As such I built an R script to pull in and process our raw spectra, followed by selection of consistent peaks and combination of resulting peak intensities for implementation in machine learning algorithms. This enables us to quickly process raw spectra and identify peaks of interest for further analysis and identification. 
