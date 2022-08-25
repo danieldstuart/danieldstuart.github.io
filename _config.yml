@@ -1,2 +1,6 @@
 theme: jekyll-theme-slate
 title: "Daniel D Stuart"
+
+header_pages:
+  - Machine Learning.md
+  - Monte Carlo.md
