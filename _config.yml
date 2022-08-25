@@ -3,8 +3,8 @@ theme: minima
 
 title: "Daniel D Stuart"
 
+timezone: America/Los_Angeles
+
 header_pages:
   - Projects.md
   - Publications.md
-
-timezone: America/Los_Angeles
