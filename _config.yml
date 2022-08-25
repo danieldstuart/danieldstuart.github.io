@@ -4,7 +4,7 @@ theme: minima
 title: "Daniel D Stuart"
 
 header_pages:
-  - Machine Learning.md
-  - Monte Carlo.md
+  - Projects.md
+  - Publications.md
 
 timezone: America/Los_Angeles
