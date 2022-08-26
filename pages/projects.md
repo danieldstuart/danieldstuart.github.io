@@ -1,3 +1,7 @@
+---
+title: Projects
+---
+
 Through my time in graduate school I have worked on various projects some of these projects can be seen here with a bit more focus on coding and modeling work. 
 
 ## Machine Learning  ##
