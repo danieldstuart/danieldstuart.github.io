@@ -8,7 +8,7 @@ layout: home
 
 <div markdown="1" class="center"> 
 ![Headshot photo](images/Daniel.jpg){: width="300" height="350"}
-![Cleanroom photo](images/DanielCleanroom.jpg){: width="300" height="350"}
+![Cleanroom photo](images/DanielCleanroom.JPG){: width="300" height="350"}
 </div>
 
 My name is Daniel D Stuart and I am a Chemistry PhD Candidate in the [Cheng Lab](https://chenglab.ucr.edu/) at the University of California, Riverside. I recieved my Masters in March 2020 and expect to complete my PhD in Spring 2023.
