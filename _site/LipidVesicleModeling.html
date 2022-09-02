@@ -1,0 +1,263 @@
+			
+<!DOCTYPE html>
+<html>
+
+<style>
+.body{
+margin-right: 5%;
+margin-left: 5%;
+}
+.code{
+overflow: auto;
+text-align: left;
+margin-right: 3%;
+margin-left: 3%;
+height: 150px;
+}
+.center{
+ display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+</style>
+
+
+<head>
+	<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index">Home</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="projects">Projects</a></li>
+        <li><a href="publications">Publications</a></li>
+        <li><a href="ContactMe">Contact Me</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+	<title>Daniel D Stuart</title>
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+
+<link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+	<div class="page-wrap">
+
+	<div class="center">
+  <h2 id="lipid-vesicle-modeling">Lipid Vesicle Modeling</h2>
+  <p><img src="images/VesicleModel.jpeg" alt="30nm Vesicle Model" width="300" /></p>
+</div>
+
+<div class="body">
+  <p>Here I will talk through the math and code needed to model a lipid vesicle and calculate distances between lipids. As well as methods to visualize the modeled liposomes.</p>
+</div>
+
+<div class="body">
+  <p>First we will load any required libraries of which there is only one (<a href="https://cran.r-project.org/web/packages/rgl/index.html" target="_blank" rel="noreferrer noopener">RGL</a>) which is used for the visualization as the rest of the math is relatively simple and built into base R. We will also set a few parameters for our vesicles and lipids.</p>
+</div>
+
+<div class="code">
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>library("rgl")
+
+# Parameters of the lipid vesicles in question
+Lipid1_Pct = 95
+Lipid2_Pct = 5
+Lipid3_Pct = 0
+Vesicle_Diameter = 30
+Vesicle_Radius = Vesicle_Diameter/2
+Bilayer_Thickness = 5
+Lipid_Area = .683
+Lipid_Radius = sqrt(Lipid_Area/pi)
+</code></pre></div>  </div>
+</div>
+
+<div class="body">
+  <p>Now we will calcualte the number of lipids in the whole vesicle and in the outer layer of the vesicle bilayer. We will also then calcualte the number of lipids of each type we have selected. In this example I am  using 95% POPC and 5% GM1 ganglioside.</p>
+</div>
+
+<div class="code">
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Calculates number of lipids in a vesicle and number of each lipid that makes up the vesicle
+Num_Lipids = ceiling((4*pi*((Vesicle_Diameter/2)^2)+4*pi*(Vesicle_Radius-Bilayer_Thickness)^2)/Lipid_Area)
+Outer_Lipids = ceiling(4*pi*((Vesicle_Diameter/2)^2)/Lipid_Area)
+Num_Lipids1 = round(Outer_Lipids*(Lipid1_Pct/100))
+Num_Lipids2 = round(Outer_Lipids*(Lipid2_Pct/100))
+Num_Lipids3 = round(Outer_Lipids*(Lipid3_Pct/100))
+</code></pre></div>  </div>
+</div>
+
+<div class="body">
+  <p>We can now build and visualize the GM1 parts of our vesicle.</p>
+</div>
+
+<div class="code">
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Builds a base sphere for the lipids vesicle
+spheres3d(0, 0, 0, radius=1, color="white")
+
+# If you want results to be reproducible
+#set.seed(100)
+
+# Randomly select locations for lipid 2
+n &lt;- Num_Lipids2
+theta &lt;- runif(n,0,2*pi)
+u &lt;- runif(n,-1,1)
+x &lt;- sqrt(1-u^2)*cos(theta)
+y &lt;- sqrt(1-u^2)*sin(theta)
+z &lt;- u
+# Graphs a 3d representation of these lipids distributed on a sphere
+spheres3d(x, y, z, col="red", radius=(Lipid_Radius/Vesicle_Radius))
+# Opens the 3d representation in R's viewer 
+rglwidget()
+</code></pre></div>  </div>
+</div>
+
+<div class="center">
+  <p>Click on the vesicles to see an interactive version. <br />
+<a href="BlankVesicle.html" target="_blank" rel="noreferrer noopener"> <img src="images/WhiteSphere.jpeg" alt="Base White Sphere" width="30%" /></a>
+<a href="GM1Vesicle.html" target="_blank" rel="noreferrer noopener"> <img src="images/GM1_Added.jpeg" alt="Now with added GM1 Gangliosides" width="30%" /></a></p>
+</div>
+
+<div class="body">
+  <p>You can also include the POPC lipids in blue to get a fuller representation of the vesicle. Though you should be careful when doing this larger sized vesicles as the number of lipids increases substantially and will become very computationally intensive. As you can see even with the 30nm vesicle demonstrated here.</p>
+</div>
+
+<div class="code">
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Will try to plot all of the lipids which can be very intensive with larger vesicles
+n &lt;- Num_Lipids1
+theta &lt;- runif(n,0,2*pi)
+u &lt;- runif(n,-1,1)
+x &lt;- sqrt(1-u^2)*cos(theta)
+y &lt;- sqrt(1-u^2)*sin(theta)
+z &lt;- u
+spheres3d(x, y, z, col="blue", (Lipid_Radius/Vesicle_Radius))
+</code></pre></div>  </div>
+</div>
+
+<div class="center">
+  <p>Click on the vesicle to see an interactive version. <br />
+<a href="FullVesicle.html" target="_blank" rel="noreferrer noopener"> <img src="images/FullVesicle.jpeg" alt="Now with added GM1 Gangliosides" width="50%" /></a></p>
+</div>
+
+<div class="body">
+  <p>The code also accounts for vesicle diameter to keep sizes accruate which can be seen with the 30, 100 and 200nm vesicles shown below.</p>
+</div>
+
+<div class="center">
+  <p>Click on the vesicles to see an interactive version. Be aware the 200nm vesicle contains over 9000 lipid points and is therefore highly intensive. <br />
+<a href="30nmVesicle.html" target="_blank" rel="noreferrer noopener"> <img src="images/30nmVesicle.jpeg" alt="30nm Vesicle with 5% ganglioside" width="30%" /></a>
+<a href="100nmVesicle.html" target="_blank" rel="noreferrer noopener"> <img src="images/100nmVesicle.jpeg" alt="100nm Vesicle with 5% ganglioside" width="30%" /></a>
+<a href="200nmVesicle.html" target="_blank" rel="noreferrer noopener"> <img src="images/200nmVesicle.jpeg" alt="200nm Vesicle with 5% ganglioside" width="30%" /></a></p>
+</div>
+
+<div class="body">
+  <p>These points can then be utilzied to calculate the average distance between lipids randomly distributed within a vesicle at a selected percentage. To do this we iterate through building thousands of these vesicles and then calculate the minimum chord distance between a selected point and all other points. This gives a straight line distance between the xyz coordinates of these points.</p>
+</div>
+
+<div class="code">
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Reduces the number of iterations based on the number of lipids of this type in the vesicle
+iterations = round(50000/n)
+# Initializes ChordList for the loops coming up
+ChordList &lt;- c()
+
+for (i in 1:iterations){
+  theta &lt;- runif(n,0,2*pi)
+  u &lt;- runif(n,-1,1)
+  x &lt;- sqrt(1-u^2)*cos(theta)
+  y &lt;- sqrt(1-u^2)*sin(theta)
+  z &lt;- u
+  NumValues &lt;- length(x)
+  for (i in 1:NumValues){
+    x1 &lt;- x[i]
+    y1 &lt;- y[i]
+    z1 &lt;- z[i]   
+    ChordLength &lt;- c()   
+    for (i in 1:NumValues){
+      x2 &lt;- x[i]
+      y2 &lt;- y[i]
+      z2 &lt;- z[i]
+      ChordLengthx &lt;- sqrt((x2-x1)^2 + (y2-y1)^2 + (z2-z1)^2)
+      ChordLength &lt;- c(ChordLength, ChordLengthx)
+    }  
+    ChordLength &lt;- min(ChordLength[ChordLength&gt;0])
+    ChordList &lt;- c(ChordList, ChordLength)
+  }
+}
+</code></pre></div>  </div>
+</div>
+
+<div class="body">
+  <p>These chord lengths can then be corrected based on vesicle radius so that the values are consistent with a vesicle of the selected size. Then they can be used to calculate an arc distance which is a more accurate representation of the distance between lipids on a spherical vesicle.</p>
+</div>
+
+<div class="code">
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ChordList &lt;- unique(ChordList)
+ChordList &lt;- ChordList*Vesicle_Radius
+ChordListLength &lt;- length(ChordList)
+
+ArcList &lt;- c()
+for (i in 1:ChordListLength){
+  ArcListx &lt;- Vesicle_Radius*(2*(asin(ChordList[i]/Vesicle_Diameter)))
+  ArcList &lt;- c(ArcList, ArcListx)
+}
+</code></pre></div>  </div>
+</div>
+
+<div class="body">
+  <p>Finally these chord lengths can be combined into a histogram displaying the distribution of minimum distances between lipids within a vesicle. This can used to estimate the potential for multivalent interactions.</p>
+</div>
+
+<div class="code">
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Title &lt;- "5% GM1 Distribution in 30nm Vesicles"
+hist(ArcList, main = Title, xlab = "Arc Distance (nm)", xlim = c(0,8), ylim = c(0, 2600), breaks = 40)
+mean(ArcList)
+</code></pre></div>  </div>
+</div>
+
+<div class="center">
+  <p><img src="images/Histogram.jpeg" alt="Distribution of ganglioside distances in a 5% GM1 30nm vesicle" width="50%" /></p>
+</div>
+
+
+	</div>
+	<footer class="site-footer">
+		<style>
+.author{
+text-align: left;
+margin-left: 5%;
+}
+</style>
+<style>
+.socials{
+text-align: right;
+margin-right: 5%;
+height:;
+}
+</style>
+
+<div class="author">
+Built by <a href="https://github.com/danieldstuart"> Daniel D Stuart <img src="images/GitHub.png" alt="GitHub Logo" height="25" width=auto float="right"></a>
+<br>
+Last Updated August 28th, 2022
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous">
+ </script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
+	</footer>
+</body>
+</html>

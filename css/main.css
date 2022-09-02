@@ -1,0 +1,32 @@
+body{
+	overflow-y: scroll;
+  text-align: center;
+  text-align: justify;
+  font-size: 20px;
+}
+* {
+  margin: 0px;
+}
+html, body {
+  height: 100%;
+}
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -50px; 
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .page-wrap:after {
+  height: 50px; 
+}
+.site-footer {
+  background: #F8F8F8;
+}
+
+.site-footer p{
+  text-align: center;
+  padding-top: 2%;
+}

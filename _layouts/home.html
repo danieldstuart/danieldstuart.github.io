@@ -1,0 +1,40 @@
+			
+<!DOCTYPE html>
+<html>
+
+<style>
+.body{
+margin-right: 5%;
+margin-left: 5%;
+}
+.code{
+overflow: auto;
+text-align: left;
+margin-right: 3%;
+margin-left: 3%;
+height: 150px;
+}
+.center{
+ display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+</style>
+
+
+<head>
+	{% include header.html %}
+	{% include head.html %}
+</head>
+<body>
+	<div class="page-wrap">
+
+	{{content}}
+
+	</div>
+	<footer class="site-footer">
+		{% include footer.html %} 
+	</footer>
+</body>
+</html>

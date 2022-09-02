@@ -1,0 +1,124 @@
+			
+<!DOCTYPE html>
+<html>
+
+<style>
+.body{
+margin-right: 5%;
+margin-left: 5%;
+}
+.code{
+overflow: auto;
+text-align: left;
+margin-right: 3%;
+margin-left: 3%;
+height: 150px;
+}
+.center{
+ display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+</style>
+
+
+<head>
+	<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index">Home</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="projects">Projects</a></li>
+        <li><a href="publications">Publications</a></li>
+        <li><a href="ContactMe">Contact Me</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+	<title>Daniel D Stuart</title>
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+
+<link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+	<div class="page-wrap">
+
+	<div class="body">
+  <p>Through my time in graduate school I have worked on various projects, an overview of these projects can be seen here. If you are interested in more details on any particular project please check out the in depth explanation post for that project or <a href="/ContactMe.html">Contact Me</a>.</p>
+
+  <p><br /></p>
+
+  <div class="center">
+    <h2 id="processing-and-machine-learning-analysis-of-maldi-spectra"><a href="/MALDI_ML.html">Processing and Machine Learning Analysis of MALDI Spectra</a></h2>
+  </div>
+  <div class="center">
+    <p><img src="images/MLMALDIMS.jpeg" alt="Machine Learning MALDI" width="500" /></p>
+  </div>
+  <p>One of the major bottlenecks we faced in lipidomic analysis using MALDI-MS was the need to manually process spectra. As such I built an R script to pull in and process our raw spectra, followed by selection of consistent peaks and combination of resulting peak intensities for implementation in machine learning algorithms. This enables us to quickly process raw spectra and identify peaks of interest for further analysis and identification.</p>
+
+  <p><br /></p>
+
+  <div class="center">
+    <h2 id="lipid-vesicle-modeling"><a href="/LipidVesicleModeling.html">Lipid Vesicle Modeling</a></h2>
+  </div>
+  <div class="center">
+    <p><img src="images/VesicleModel.jpeg" alt="Model of 30nm Vesicle" width="300" /></p>
+  </div>
+  <p>Lipids constitute a major portion of our research efforts both as platforms and targets for our sensors. Lipids are formualted as lipid vesicles with selected constituents for use in self assembled lipid membranes or as curvature mimicking substrates. To visualize and understand how the consituents of these membranes are distributed I have developed an R script to build randomly distributed lipid vesicle models and iterate through many vesicle models to calculate the average distance between constituents. This enables lipid formulations to be carefully tuned to match project needs with built in visualization of 3D lipid structures.</p>
+
+  <p><br /></p>
+
+  <div class="center">
+    <h2 id="antifouling-lipid-membranes">Antifouling Lipid Membranes</h2>
+  </div>
+  <div class="center">
+    <p><img src="images/EPCAntifouling.png" alt="Protein A EPC Antifouling Membrane" width="400" /></p>
+  </div>
+  <p>Our group has demonstrated the effectiveness of lipid membranes as an antifouling substrate to improve biosensor performance. My work focuses on expanding these capabilities and understanding how and why these substrates are so effective. To this end we have identified zwitterionic (POPC) and positively charged (EPC) lipid membranes as effective antifouling surfaces but have found the conditions under which they provide these antifouling effects are distinct and rely on the underlying sensor surface properties. Demonstrating that if tuned to fit sensor needs lipid bilayers can be utilzied to provide highly robust reductions in unwanted nonspecific interactions that would convolute sensor signal.</p>
+</div>
+
+
+	</div>
+	<footer class="site-footer">
+		<style>
+.author{
+text-align: left;
+margin-left: 5%;
+}
+</style>
+<style>
+.socials{
+text-align: right;
+margin-right: 5%;
+height:;
+}
+</style>
+
+<div class="author">
+Built by <a href="https://github.com/danieldstuart"> Daniel D Stuart <img src="images/GitHub.png" alt="GitHub Logo" height="25" width=auto float="right"></a>
+<br>
+Last Updated August 28th, 2022
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous">
+ </script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
+	</footer>
+</body>
+</html>

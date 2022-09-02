@@ -1,0 +1,335 @@
+			
+<!DOCTYPE html>
+<html>
+
+<style>
+.body{
+margin-right: 5%;
+margin-left: 5%;
+}
+.code{
+overflow: auto;
+text-align: left;
+margin-right: 3%;
+margin-left: 3%;
+height: 150px;
+}
+.center{
+ display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+</style>
+
+
+<head>
+	<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index">Home</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="projects">Projects</a></li>
+        <li><a href="publications">Publications</a></li>
+        <li><a href="ContactMe">Contact Me</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+	<title>Daniel D Stuart</title>
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+
+<link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+	<div class="page-wrap">
+
+	<div class="center">
+  <h2 id="processing-and-machine-learning-analysis-of-maldi-spectra">Processing and Machine Learning analysis of MALDI Spectra</h2>
+  <p><img src="images/MLMALDIMS.jpeg" alt="Machine Learning MALDI" width="500" /></p>
+</div>
+
+<div class="body">
+  <p>Here I will give an overview of my code to analyze and combine many MALDI spectra as well as the machine learning and plotting tools I then apply to this processed mass spectrometry data.</p>
+</div>
+
+<div class="body">
+  <p>First make sure all of the necessary packages are loaded and if not then download them.</p>
+</div>
+
+<div class="code">
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># List of packages 
+packages = c("dplyr", "dummies", "rfUtilities", "caret", "R.utils", "pheatmap", "MALDIquantForeign", "MLeval", "MASS", "MALDIquant", "caretEnsemble", "corrplot", "readMzXmlData", "multiROC")
+library(caret)
+# Now load or install&amp;load all
+package.check &lt;- lapply(
+  packages,
+  FUN = function(x) {
+    if (!require(x, character.only = TRUE)) {
+      install.packages(x, dependencies = TRUE)
+      library(x, character.only = TRUE)
+    }
+  }
+)
+</code></pre></div>  </div>
+</div>
+
+<div class="body">
+  <p>For data split into folders labeled by their classifier (i.e bacterial species, herbicide treatment, etc.). I built a loop to run through each folder and pull in any mass spectra files, in this case .mzxml files. This also builds a classifier list to go with the mass spectra. This is important for the later machine learning algorithms that will be run.</p>
+</div>
+
+<div class="code">
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for (x in 1:foldernum){
+  setwd("~/R/Spectra Analysis and ML/Place Data Here")
+  setwd(folders[x]) # changes working directory to next folder 
+  directory &lt;- list.files(pattern="*.mzxml", recursive = T) # pulls out spectra within selected folder
+  s1 &lt;- importMzXml(directory)
+  outtest &lt;- exists("s")
+  if(outtest == FALSE){
+  s &lt;- s1 # combines all the pulled spectra together
+  classifier &lt;- as.character(c(rep(classes[x], length(s1)))) # creates classifier table
+  }
+  s &lt;- c(s,s1)
+  classifier1 &lt;- as.character(c(rep(classes[x], length(s1)))) # creates classifer1 table as temporary store to append
+  classifier &lt;- as.character(c(classifier, classifier1)) # combines class names from each iteration
+}
+</code></pre></div>  </div>
+</div>
+
+<div class="body">
+  <p>Now that all of the spectra are pulled into R we can process the spectra, identify, peaks and get a matrix of peak intensities that match our chosen parameters. I also have it output a plot of one of the spectra just to make sure everything is working appropriately.</p>
+</div>
+
+<div class="code">
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Select mass range of interest
+minmass &lt;- 500
+maxmass &lt;- 2400
+
+# Process and align all the spectra
+spectra &lt;- smoothIntensity(s, method="MovingAverage", halfWindowSize=2)
+spectra &lt;- removeBaseline(spectra, method="SNIP", iterations=100)
+spectra &lt;- alignSpectra(spectra, halfWindowSize=20, SNR=4, tolerance=0.002, warpingMethod="lowess")
+
+plot(spectra[[1]], xlim=c(minmass, maxmass), ylim=c(0, 2000)) # plots the first spectra 
+
+spectra &lt;- calibrateIntensity(spectra, method = "TIC") # normalize intensity
+
+# Detect peaks for all spectra and plot result for first spectra
+peaks &lt;- detectPeaks(spectra, method="MAD", halfWindowSize=20, SNR=5)
+
+# Equalize similar peaks, remove inconsistent peaks, combine into dataset of peak(m/z) and intensity 
+peaks &lt;- binPeaks(peaks, method = "strict", tolerance=0.002)
+peaks &lt;- filterPeaks(peaks, minFrequency=0.1)
+imatrix &lt;- intensityMatrix(peaks, spectra)
+
+# Keep only peaks between the min and maxmass
+cols &lt;- as.integer(colnames(imatrix))
+col_to_keep &lt;- cols &gt; minmass &amp; cols &lt; maxmass
+imatrix &lt;- imatrix[,col_to_keep]
+</code></pre></div>  </div>
+</div>
+
+<div class="center">
+  <p><img src="images/Spectra.jpeg" alt="Representative plot of pulled in spectra" width="50%" /></p>
+</div>
+
+<div class="body">
+  <p>If you want to only look at peaks within a set m/z range you can remove any columns that are outside of this range. Then build a dataset from the mass spectra data and classifiers obtained in the beginning loop. Finally for use in machine learning algorithms we split our dataset into testing and validation sets. I use 70% for testing here but depending on the dataset size you have this can be modified. For example if you have a very large dataset a smaller percentage for validation would probably be acceptable while it would not be for a very small dataset.</p>
+</div>
+
+<div class="code">
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Keep only peaks between the min and maxmass
+cols &lt;- as.integer(colnames(imatrix))
+col_to_keep &lt;- cols &gt; minmass &amp; cols &lt; maxmass
+imatrix &lt;- imatrix[,col_to_keep]
+
+# Add classification column to dataset
+dataset &lt;- data.frame(imatrix, classifier, stringsAsFactors = TRUE)
+datasetsave &lt;- dataset
+
+# Split data into training(dataset) and testing(validation)
+validation_index &lt;- createDataPartition(dataset$classifier, p=0.70, list=FALSE)
+validation &lt;- dataset[-validation_index,]
+dataset &lt;- dataset[validation_index,]
+</code></pre></div>  </div>
+</div>
+
+<div class="body">
+  <p>Now that the dataset is formualted and split into training and validation you can begin training your selected models. First I train a control to use 3 repeats of 10 fold cross validation in efforts to limit overtraining. Next I have selected random forest(rf), neural net(nnet), k nearest neighbor(knn), and linear discriminat analaysis(lda). More can be easily added based on your specific needs. I am using the <a href="https://topepo.github.io/caret/available-models.html">Caret package</a> which has over 200 available models so there are many options.</p>
+</div>
+
+<div class="code">
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Train control 
+control &lt;- trainControl(method="repeatedcv", number=10, repeats=3, savePredictions = "final", classProbs = TRUE, index = createFolds(dataset$classifier, 10), allowParallel =  TRUE)
+
+# Set metric for model success, Kappa can be good for low % of samples in 1 class
+metric &lt;- "Accuracy"
+
+# Train models of chosen type's
+algorithms &lt;- c("rf", "nnet", "kknn", "lda") # algorithms to be tested
+model_list &lt;- caretList(classifier~., data=dataset, metric=metric, trControl=control, methodList=algorithms)
+</code></pre></div>  </div>
+</div>
+
+<div class="body">
+  <p>Now that the models have been trained we probably want some figures and visualization of model sucess metrics. So I have built in a loop to save heatmap and correlation plots for each of the models we have trained.</p>
+</div>
+
+<div class="code">
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for (methodname in algorithms){
+  # Predict testing data with chosen model
+  p &lt;- predict(model_list[[methodname]], validation)
+  cm &lt;- confusionMatrix(p, validation$classifier)
+  print(cm)
+  
+  tryCatch({
+    
+  # Output heatmap of prediction results
+  mat &lt;- as.table(cm)
+  pdf(paste(methodname, "heatmap.pdf"), width = 7, height = 7, onefile = F) # saves results as a pdf of given name with given size (in inches)
+  map &lt;- pheatmap(mat, cluster_rows = FALSE, cluster_cols = FALSE, display_numbers = TRUE, show_colnames = TRUE, show_rownames = TRUE, legend = TRUE, fontsize_number = 20)
+  dev.off()
+  
+  # Output correlation plot of prediction results
+  co &lt;- cor(mat)
+  pdf(paste(methodname, "correlation plot.pdf"), width = 7, height = 7, onefile = FALSE) # saves results as a pdf of given name with given size (in inches)
+  corrplot(co, method = "circle")
+  dev.off()
+  
+  }, error=function(e){cat("EROR :", conditionMessage(e), "\n")})
+}
+
+# Outputs a pdf of important variables
+pdf(paste("rf", "important variables.pdf"), width = 7, height = 7, onefile = FALSE)
+impvar &lt;- varImp(model_list[["rf"]], scale = TRUE)
+plot(impvar, top = 20)
+dev.off()
+</code></pre></div>  </div>
+</div>
+
+<div class="body">
+  <p>Here are a few examples of what these plots look like.</p>
+</div>
+
+<div class="center">
+  <p><img src="images/nnetheatmap.jpg" alt="Neural Net Heatmap" width="30%" />
+<img src="images/rfimportantvariables.jpg" alt="Important Variables from Random Forest Model" width="30%" />
+<img src="images/nnetcorrmap.jpg" alt="Neural Net Correlation Map" width="30%" /></p>
+</div>
+
+<div class="body">
+  <p>We can also use linear discriminate analysis to seperate classes, for example here we will be using lipidomic MALDI spectra of various bacteria species to differentiate species. First we train the model then plot the predicitions from that model to get a nice figure showing how effectively these classes can be seperated.</p>
+</div>
+
+<div class="code">
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Trains an LDA model using the whole data set
+lda_model &lt;- lda(classifier ~ ., data = datasetsave)
+lda_predict &lt;- predict(lda_model)
+
+# Plots LDA results
+ggplot(cbind(datasetsave, lda_predict$x),
+       aes(y = LD1, x = LD2, colour = classifier)) + 
+  stat_ellipse(aes(fill = classifier), geom = "polygon", alpha = .2, level = 0.99) +
+  geom_point() +
+  ggtitle("LDA") +
+  theme(legend.position = "right")
+</code></pre></div>  </div>
+</div>
+
+<div class="center">
+  <p><img src="images/2DLDA.jpeg" alt="2D Linear Distriminant Analysis Figure" width="50%" /></p>
+</div>
+
+<div class="body">
+  <p>There are more dimensions to LDA data as such a three dimensional plot can also be made by pulling out the top 3 linear discriminants and plotting them.</p>
+</div>
+
+<div class="code">
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Plotting with plotly
+library(plotly)
+
+# Setting up lda data for plotly
+lda_data &lt;- cbind(datasetsave, lda_predict$x)
+LD1 &lt;- lda_data$LD1
+LD2 &lt;- lda_data$LD2
+LD3 &lt;- lda_data$LD3
+class &lt;- lda_data$classifier
+lda_dat &lt;- data.frame(LD1, LD2, LD3, class, stringsasfactors = TRUE)
+
+# Setting up plot properties
+t1 &lt;- list(
+  family = "Times New Roman",
+  size = 24,
+  color = "black"
+)
+
+t2 &lt;- list(
+  family = "Times New Roman",
+  size = 18,
+  color = "black")
+
+# Set up the axis variable labels
+axx &lt;- list(title = "LD2")
+axy &lt;- list(title = "LD1")
+axz &lt;- list(title = "LD3")
+
+# Plotly figure
+fig &lt;- plot_ly(lda_dat, x = LD2, y = LD1, z = LD3, type="scatter3d", mode="markers", color=classifier, size=3)%&gt;%
+  layout(title = list(text = "Bacterial Species LDA", font = t1, y = 0.95), scene = list(xaxis=axx,yaxis=axy,zaxis=axz), legend = list(title = list(text = "Species"), font = t2))
+# Plot
+fig
+</code></pre></div>  </div>
+</div>
+
+<div class="center">
+  <p><a href="3D_LDA.html" target="_blank" rel="noreferrer noopener"><img src="images/3DLDA.jpeg" alt="3D Linear Distriminant Analysis Figure" width="50%" /></a></p>
+</div>
+
+<div class="body">
+  <p>An interactive version of this 3D plot can be found by clicking on the plot or <a href="3D_LDA.html" target="_blank" rel="noreferrer noopener">here</a>.</p>
+</div>
+
+
+	</div>
+	<footer class="site-footer">
+		<style>
+.author{
+text-align: left;
+margin-left: 5%;
+}
+</style>
+<style>
+.socials{
+text-align: right;
+margin-right: 5%;
+height:;
+}
+</style>
+
+<div class="author">
+Built by <a href="https://github.com/danieldstuart"> Daniel D Stuart <img src="images/GitHub.png" alt="GitHub Logo" height="25" width=auto float="right"></a>
+<br>
+Last Updated August 28th, 2022
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous">
+ </script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
+	</footer>
+</body>
+</html>
