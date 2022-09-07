@@ -2,7 +2,7 @@
 layout: home
 title: Lipid Vesicle Modeling
 ---
-
+<div markdown="1" class="body">
 <div markdown="1" class="center">
 ## Lipid Vesicle Modeling ##
 ![30nm Vesicle Model](images/VesicleModel.jpeg){: width="300" }
@@ -181,4 +181,5 @@ mean(ArcList)
 
 <div markdown="1" class="center">
 ![Distribution of ganglioside distances in a 5% GM1 30 nm vesicle](images/Histogram.jpeg){: width="50%" }
+</div>
 </div>

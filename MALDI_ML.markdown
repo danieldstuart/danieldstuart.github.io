@@ -3,6 +3,7 @@ layout: home
 title: Processing and Machine Learning analysis of MALDI Spectra
 ---
 
+<div markdown="1" class="body">
 <div markdown="1" class="center">
 ## Processing and Machine Learning analysis of MALDI Spectra ##
 ![Machine Learning MALDI](images/MLMALDIMS.jpeg){: width="500" }
@@ -255,4 +256,5 @@ fig
 
 <div markdown="1" class="body">
 An interactive version of this 3D plot can be found by clicking on the plot or <a href="3D_LDA.html" target="_blank" rel="noreferrer noopener">here</a>.
+</div>
 </div>
