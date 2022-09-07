@@ -118,7 +118,7 @@ dataset <- dataset[validation_index,]
 </div>
 
 <div markdown="1" class="body">
-Now that the dataset is formualted and split into training and validation you can begin training your selected models. First I train a control to use 3 repeats of 10 fold cross validation in efforts to limit overtraining. Next I have selected random forest(rf), neural net(nnet), k nearest neighbor(knn), and linear discriminat analaysis(lda). More can be easily added based on your specific needs. I am using the [Caret package](https://topepo.github.io/caret/available-models.html) which has over 200 available models so there are many options.
+Now that the dataset is formulated and split into training and validation you can begin training your selected models. First I train a control to use 3 repeats of 10 fold cross validation in efforts to limit over training. Next I have selected random forest(rf), neural net(nnet), k nearest neighbor(knn), and linear discriminant analysis(lda). More can be easily added based on your specific needs. I am using the [Caret package](https://topepo.github.io/caret/available-models.html) which has over 200 available models so there are many options.
 </div>
 
 
@@ -137,7 +137,7 @@ model_list <- caretList(classifier~., data=dataset, metric=metric, trControl=con
 </div>
 
 <div markdown="1" class="body">
-Now that the models have been trained we probably want some figures and visualization of model sucess metrics. So I have built in a loop to save heatmap and correlation plots for each of the models we have trained.
+Now that the models have been trained we probably want some figures and visualization of model success metrics. So I have built in a loop to save heat map and correlation plots for each of the models we have trained.
 </div>
 
 <div markdown="1" class="code">
@@ -184,7 +184,7 @@ Here are a few examples of what these plots look like.
 </div>
 
 <div markdown="1" class="body">
-We can also use linear discriminate analysis to seperate classes, for example here we will be using lipidomic MALDI spectra of various bacteria species to differentiate species. First we train the model then plot the predicitions from that model to get a nice figure showing how effectively these classes can be seperated.
+We can also use linear discriminate analysis to separate classes, for example here we will be using lipidomic MALDI spectra of various bacteria species to differentiate species. First we train the model then plot the predictions from that model to get a nice figure showing how effectively these classes can be separated.
 </div>
 
 <div markdown="1" class="code">
@@ -204,7 +204,7 @@ ggplot(cbind(datasetsave, lda_predict$x),
 </div>
 
 <div markdown="1" class="center">
-![2D Linear Distriminant Analysis Figure](images/2DLDA.jpeg){: width="50%" }
+![2D Linear Discriminant Analysis Figure](images/2DLDA.jpeg){: width="50%" }
 </div>
 
 <div markdown="1" class="body">
@@ -250,7 +250,7 @@ fig
 </div>
 
 <div markdown="1" class="center">
-<a href="3D_LDA.html" target="_blank" rel="noreferrer noopener">![3D Linear Distriminant Analysis Figure](images/3DLDA.jpeg){: width="50%" }</a>
+<a href="3D_LDA.html" target="_blank" rel="noreferrer noopener">![3D Linear Discriminant Analysis Figure](images/3DLDA.jpeg){: width="50%" }</a>
 </div>
 
 <div markdown="1" class="body">

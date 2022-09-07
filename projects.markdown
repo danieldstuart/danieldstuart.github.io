@@ -24,7 +24,7 @@ One of the major bottlenecks we faced in lipidomic analysis using MALDI-MS was t
 <div markdown="1" class="center">
 ![Model of 30nm Vesicle](images/VesicleModel.jpeg){: width="300" }
 </div>
-Lipids constitute a major portion of our research efforts both as platforms and targets for our sensors. Lipids are formualted as lipid vesicles with selected constituents for use in self assembled lipid membranes or as curvature mimicking substrates. To visualize and understand how the consituents of these membranes are distributed I have developed an R script to build randomly distributed lipid vesicle models and iterate through many vesicle models to calculate the average distance between constituents. This enables lipid formulations to be carefully tuned to match project needs with built in visualization of 3D lipid structures.
+Lipids constitute a major portion of our research efforts both as platforms and targets for our sensors. Lipids are formulated as lipid vesicles with selected constituents for use in self assembled lipid membranes or as curvature mimicking substrates. To visualize and understand how the constituents of these membranes are distributed I have developed an R script to build randomly distributed lipid vesicle models and iterate through many vesicle models to calculate the average distance between constituents. This enables lipid formulations to be carefully tuned to match project needs with built in visualization of 3D lipid structures.
 
 <br>
 
@@ -34,5 +34,5 @@ Lipids constitute a major portion of our research efforts both as platforms and 
 <div markdown="1" class="center">
 ![Protein A EPC Antifouling Membrane](images/EPCAntifouling.png){: width="400" }
 </div>
-Our group has demonstrated the effectiveness of lipid membranes as an antifouling substrate to improve biosensor performance. My work focuses on expanding these capabilities and understanding how and why these substrates are so effective. To this end we have identified zwitterionic (POPC) and positively charged (EPC) lipid membranes as effective antifouling surfaces but have found the conditions under which they provide these antifouling effects are distinct and rely on the underlying sensor surface properties. Demonstrating that if tuned to fit sensor needs lipid bilayers can be utilzied to provide highly robust reductions in unwanted nonspecific interactions that would convolute sensor signal.
+Our group has demonstrated the effectiveness of lipid membranes as an antifouling substrate to improve biosensor performance. My work focuses on expanding these capabilities and understanding how and why these substrates are so effective. To this end we have identified zwitterionic (POPC) and positively charged (EPC) lipid membranes as effective antifouling surfaces but have found the conditions under which they provide these antifouling effects are distinct and rely on the underlying sensor surface properties. Demonstrating that if tuned to fit sensor needs lipid bilayers can be utilized to provide highly robust reductions in unwanted nonspecific interactions that would convolute sensor signal.
 </div>

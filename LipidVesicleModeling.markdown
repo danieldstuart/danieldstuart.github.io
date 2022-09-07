@@ -33,7 +33,7 @@ Lipid_Radius = sqrt(Lipid_Area/pi)
 </div>
 
 <div markdown="1" class="body">
-Now we will calcualte the number of lipids in the whole vesicle and in the outer layer of the vesicle bilayer. We will also then calcualte the number of lipids of each type we have selected. In this example I am  using 95% POPC and 5% GM1 ganglioside.
+Now we will calculate the number of lipids in the whole vesicle and in the outer layer of the vesicle bilayer. We will also then calculate the number of lipids of each type we have selected. In this example I am  using 95% POPC and 5% GM1 ganglioside.
 </div>
 
 <div markdown="1" class="code">
@@ -80,7 +80,7 @@ Click on the vesicles to see an interactive version. <br>
 </div>
 
 <div markdown="1" class="body">
-You can also include the POPC lipids in blue to get a fuller representation of the vesicle. Though you should be careful when doing this larger sized vesicles as the number of lipids increases substantially and will become very computationally intensive. As you can see even with the 30nm vesicle demonstrated here. 
+You can also include the POPC lipids in blue to get a fuller representation of the vesicle. Though you should be careful when doing this larger sized vesicles as the number of lipids increases substantially and will become very computationally intensive. As you can see even with the 30 nm vesicle demonstrated here. 
 </div>
 
 <div markdown="1" class="code">
@@ -102,18 +102,18 @@ Click on the vesicle to see an interactive version. <br>
 </div>
 
 <div markdown="1" class="body">
-The code also accounts for vesicle diameter to keep sizes accruate which can be seen with the 30, 100 and 200nm vesicles shown below.
+The code also accounts for vesicle diameter to keep sizes accurate which can be seen with the 30, 100 and 200 nm vesicles shown below.
 </div>
 
 <div markdown="1" class="center">
-Click on the vesicles to see an interactive version. Be aware the 200nm vesicle contains over 9000 lipid points and is therefore highly intensive. <br>
+Click on the vesicles to see an interactive version. Be aware the 200 nm vesicle contains over 9000 lipid points and is therefore highly intensive. <br>
 <a href="30nmVesicle.html" target="_blank" rel="noreferrer noopener"> ![30nm Vesicle with 5% ganglioside](images/30nmVesicle.jpeg){: width="30%" }</a>
 <a href="100nmVesicle.html" target="_blank" rel="noreferrer noopener"> ![100nm Vesicle with 5% ganglioside](images/100nmVesicle.jpeg){: width="30%" }</a>
 <a href="200nmVesicle.html" target="_blank" rel="noreferrer noopener"> ![200nm Vesicle with 5% ganglioside](images/200nmVesicle.jpeg){: width="30%" }</a>
 </div>
 
 <div markdown="1" class="body">
-These points can then be utilzied to calculate the average distance between lipids randomly distributed within a vesicle at a selected percentage. To do this we iterate through building thousands of these vesicles and then calculate the minimum chord distance between a selected point and all other points. This gives a straight line distance between the xyz coordinates of these points.
+These points can then be utilized to calculate the average distance between lipids randomly distributed within a vesicle at a selected percentage. To do this we iterate through building thousands of these vesicles and then calculate the minimum chord distance between a selected point and all other points. This gives a straight line distance between the xyz coordinates of these points.
 </div>
 
 <div markdown="1" class="code">
@@ -180,5 +180,5 @@ mean(ArcList)
 </div>
 
 <div markdown="1" class="center">
-![Distribution of ganglioside distances in a 5% GM1 30nm vesicle](images/Histogram.jpeg){: width="50%" }
+![Distribution of ganglioside distances in a 5% GM1 30 nm vesicle](images/Histogram.jpeg){: width="50%" }
 </div>

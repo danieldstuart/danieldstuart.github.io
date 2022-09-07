@@ -6,6 +6,7 @@
 .body{
 margin-right: 5%;
 margin-left: 5%;
+margin-top: 5%;
 }
 .code{
 overflow: auto;
@@ -15,16 +16,18 @@ margin-left: 3%;
 height: 150px;
 }
 .center{
- display: block;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
+display: block;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+}
+.head{
+position: fixed; 
 }
 </style>
 
-
 <head>
-	<nav class="navbar navbar-default">
+	<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -167,7 +170,7 @@ dataset &lt;- dataset[validation_index,]
 </div>
 
 <div class="body">
-  <p>Now that the dataset is formualted and split into training and validation you can begin training your selected models. First I train a control to use 3 repeats of 10 fold cross validation in efforts to limit overtraining. Next I have selected random forest(rf), neural net(nnet), k nearest neighbor(knn), and linear discriminat analaysis(lda). More can be easily added based on your specific needs. I am using the <a href="https://topepo.github.io/caret/available-models.html">Caret package</a> which has over 200 available models so there are many options.</p>
+  <p>Now that the dataset is formulated and split into training and validation you can begin training your selected models. First I train a control to use 3 repeats of 10 fold cross validation in efforts to limit over training. Next I have selected random forest(rf), neural net(nnet), k nearest neighbor(knn), and linear discriminant analysis(lda). More can be easily added based on your specific needs. I am using the <a href="https://topepo.github.io/caret/available-models.html">Caret package</a> which has over 200 available models so there are many options.</p>
 </div>
 
 <div class="code">
@@ -184,7 +187,7 @@ model_list &lt;- caretList(classifier~., data=dataset, metric=metric, trControl=
 </div>
 
 <div class="body">
-  <p>Now that the models have been trained we probably want some figures and visualization of model sucess metrics. So I have built in a loop to save heatmap and correlation plots for each of the models we have trained.</p>
+  <p>Now that the models have been trained we probably want some figures and visualization of model success metrics. So I have built in a loop to save heat map and correlation plots for each of the models we have trained.</p>
 </div>
 
 <div class="code">
@@ -230,7 +233,7 @@ dev.off()
 </div>
 
 <div class="body">
-  <p>We can also use linear discriminate analysis to seperate classes, for example here we will be using lipidomic MALDI spectra of various bacteria species to differentiate species. First we train the model then plot the predicitions from that model to get a nice figure showing how effectively these classes can be seperated.</p>
+  <p>We can also use linear discriminate analysis to separate classes, for example here we will be using lipidomic MALDI spectra of various bacteria species to differentiate species. First we train the model then plot the predictions from that model to get a nice figure showing how effectively these classes can be separated.</p>
 </div>
 
 <div class="code">
@@ -249,7 +252,7 @@ ggplot(cbind(datasetsave, lda_predict$x),
 </div>
 
 <div class="center">
-  <p><img src="images/2DLDA.jpeg" alt="2D Linear Distriminant Analysis Figure" width="50%" /></p>
+  <p><img src="images/2DLDA.jpeg" alt="2D Linear Discriminant Analysis Figure" width="50%" /></p>
 </div>
 
 <div class="body">
@@ -294,7 +297,7 @@ fig
 </div>
 
 <div class="center">
-  <p><a href="3D_LDA.html" target="_blank" rel="noreferrer noopener"><img src="images/3DLDA.jpeg" alt="3D Linear Distriminant Analysis Figure" width="50%" /></a></p>
+  <p><a href="3D_LDA.html" target="_blank" rel="noreferrer noopener"><img src="images/3DLDA.jpeg" alt="3D Linear Discriminant Analysis Figure" width="50%" /></a></p>
 </div>
 
 <div class="body">
@@ -321,7 +324,7 @@ height:;
 <div class="author">
 Built by <a href="https://github.com/danieldstuart"> Daniel D Stuart <img src="images/GitHub.png" alt="GitHub Logo" height="25" width=auto float="right"></a>
 <br>
-Last Updated August 28th, 2022
+Last Updated September 7th, 2022
 </div>
 
 
