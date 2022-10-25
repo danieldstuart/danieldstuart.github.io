@@ -14,7 +14,7 @@ If you are interested in my publications a list is provided below. They can also
 
 ## Publications ##
 <div markdown="1" class="list">
-1. Three-dimensional printed microfluidic mixer/extractor for cell lysis and lipidomic profiling by matrix-assisted laser desorption/ionization mass spectrometry
+1. Three-dimensional printed microfluidic mixer/extractor for cell lysis and lipidomic profiling by matrix-assisted laser desorption/ionization mass spectrometry <br>
 [Zhengdong Yang, Bochao Li, Daniel D. Stuart, and Quan Cheng <em>View</em> <strong>2022</strong>](https://doi.org/10.1002/VIW.20220041)
 2. Intelligent Hydrogen Gas Monitoring in Natural Gas/Hydrogen Blending <br>
 [Bryce Davis,  Daniel D. Stuart, Mary N. Maldonado, Venkat Kamavaram,  Quan Cheng, and Vinod Veedu <em>Offshore Technology Conference</em> <strong>2022</strong>](http://dx.doi.org/10.4043/32007-MS)
