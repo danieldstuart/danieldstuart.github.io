@@ -15,9 +15,9 @@ If you are interested in my publications a list is provided below. They can also
 ## Publications ##
 <div markdown="1" class="list">
 1. Biosensing empowered by molecular identification: Advances in surface plasmon resonance techniques coupled with mass spectrometry and Raman spectroscopy <br> 
-[Daniel D. Stuart, Cole P. Ebel, and Quan Cheng <em>Sensors and Actuators Reports</em> <strong>2022</strong> 100129](https://doi.org/10.1016/j.snr.2022.100129)
+[Daniel D. Stuart, Cole P. Ebel, and Quan Cheng <em>Sensors and Actuators Reports</em> <strong>2022</strong>, 100129](https://doi.org/10.1016/j.snr.2022.100129)
 2. Three-dimensional printed microfluidic mixer/extractor for cell lysis and lipidomic profiling by matrix-assisted laser desorption/ionization mass spectrometry <br>
-[Zhengdong Yang, Bochao Li, Daniel D. Stuart, and Quan Cheng <em>View</em> <strong>2022</strong>](https://doi.org/10.1002/VIW.20220041)
+[Zhengdong Yang, Bochao Li, Daniel D. Stuart, and Quan Cheng <em>View</em> <strong>2022</strong>, 0041](https://doi.org/10.1002/VIW.20220041)
 3. Intelligent Hydrogen Gas Monitoring in Natural Gas/Hydrogen Blending <br>
 [Bryce Davis,  Daniel D. Stuart, Mary N. Maldonado, Venkat Kamavaram,  Quan Cheng, and Vinod Veedu <em>Offshore Technology Conference</em> <strong>2022</strong>](http://dx.doi.org/10.4043/32007-MS)
 4. Probing Herbicide Toxicity to Algae (Selenastrum capricornutum) by Lipid Profiling with Machine Learning and Microchip/MALDI-TOF Mass Spectrometry <br>
