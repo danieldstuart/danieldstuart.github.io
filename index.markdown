@@ -7,9 +7,9 @@ layout: home
 <div markdown="1" class="body">
 
 <div markdown="1" class="center"> 
-![Me](images/Me.jpg){: width="300" height="350"}
-![Headshot photo](images/Daniel.jpg){: width="300" height="350"}
-![Cleanroom photo](images/DanielCleanroom.JPG){: width="300" height="350"}
+![Me](images/Me.jpg){: width="300" height="400"}
+![Headshot photo](images/Daniel.jpg){: width="300" height="400"}
+![Cleanroom photo](images/DanielCleanroom.JPG){: width="300" height="400"}
 </div>
 
 My name is Daniel D Stuart and I am a Chemistry PhD Candidate in the [Cheng Lab](https://chenglab.ucr.edu/) at the University of California, Riverside. I received my Masters in March 2020 and expect to complete my PhD in Spring 2023.
