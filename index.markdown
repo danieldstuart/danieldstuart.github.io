@@ -7,6 +7,7 @@ layout: home
 <div markdown="1" class="body">
 
 <div markdown="1" class="center"> 
+![Me](images/Me.jpg){: width="300" height="350"}
 ![Headshot photo](images/Daniel.jpg){: width="300" height="350"}
 ![Cleanroom photo](images/DanielCleanroom.JPG){: width="300" height="350"}
 </div>
