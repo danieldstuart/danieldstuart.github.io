@@ -8,7 +8,8 @@ title: Publications and Presentations
 
 <div markdown="1" class="body">
 <div markdown="1" class="center">
-<a href="https://pubs.acs.org/doi/10.1021/acs.analchem.9b05285" target="_blank" rel="noreferrer noopener">![Journal Cover](images/AnalChemCover.jpg){: width="300" }</a>
+<a href="https://pubs.acs.org/doi/10.1021/acs.analchem.9b05285" target="_blank" rel="noreferrer noopener">![Anal Chem Journal Cover](images/AnalChemCover.jpg){: width="300" }</a>
+<a href="https://onlinelibrary.wiley.com/doi/10.1002/VIW.20220041" target="_blank" rel="noreferrer noopener">![View Inside Front Cover](images/ViewCover.jpg){: width="300" }</a>
 </div>
 If you are interested in my publications a list is provided below. They can also be found on my [ResearchGate](https://www.researchgate.net/profile/Daniel-Stuart-8), or [ORCID](https://orcid.org/0000-0001-6282-9373) pages.
 
