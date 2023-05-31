@@ -41,7 +41,7 @@ If you are interested in my publications a list is provided below. They can also
 <div markdown="1" class="list">
 
 1. UC Chemical Symposium, UCLA Lake Arrowhead Lodge, CA (April 24, 2023) <br>
-Understanding Pressure and Refractive Index Relationships to Enable Gas Sensing by Surface Plasmon Resonance
+Understanding Pressure and Refractive Index Relationships to Enable Gas Sensing by Surface Plasmon Resonance <br>
 Awarded Best Analytical Chemistry Talk
 
 2. SciX 2022, Microfluidic Bioanalysis (October 4, 2022)  
