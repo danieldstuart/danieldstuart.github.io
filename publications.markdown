@@ -40,7 +40,7 @@ If you are interested in my publications a list is provided below. They can also
 ## Presentations ##
 <div markdown="1" class="list">
 
-1. UC Chemical Symposium, UCLA Lake Arrowhead Lodge, CA (April 24, 2023)
+1. UC Chemical Symposium, UCLA Lake Arrowhead Lodge, CA (April 24, 2023) <br>
 Understanding Pressure and Refractive Index Relationships to Enable Gas Sensing by Surface Plasmon Resonance
 Awarded Best Analytical Chemistry Talk
 
