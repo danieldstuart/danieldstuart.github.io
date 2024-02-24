@@ -18,7 +18,7 @@ If you are interested in my publications a list is provided below. They can also
 1. Curved Membrane Mimics for Quantitative Probing of Protein–Membrane Interactions by Surface Plasmon Resonance <br>
 [Alexander S. Malinick, Daniel D. Stuart, Alexander S. Lambert, and Quan Cheng <em> ACS Applied Materials & Interfaces</em> <strong>2024 </strong>](https://pubs.acs.org/doi/full/10.1021/acsami.3c12922)
 2. Label-Free Analysis of Binding and Inhibition of SARS-Cov-19 Spike Proteins to ACE2 Receptor with ACE2-Derived Peptides by Surface Plasmon Resonance <br>
-[Fatimah Abouhajar, Rohit Chaudhuri, Santino N. Valiulis, Daniel D. Stuart, Alexander S. Malinick,  Min Xue, and Quan Cheng <em>ACS Applied Bio Materials</em><strong>2022</strong>](https://doi.org/10.1021/acsabm.2c00832)
+[Fatimah Abouhajar, Rohit Chaudhuri, Santino N. Valiulis, Daniel D. Stuart, Alexander S. Malinick,  Min Xue, and Quan Cheng <em>ACS Applied Bio Materials</em> <strong>2022</strong>](https://doi.org/10.1021/acsabm.2c00832)
 3. Biosensing empowered by molecular identification: Advances in surface plasmon resonance techniques coupled with mass spectrometry and Raman spectroscopy <br> 
 [Daniel D. Stuart, Cole P. Ebel, and Quan Cheng <em>Sensors and Actuators Reports</em> <strong>2022</strong>, 100129](https://doi.org/10.1016/j.snr.2022.100129)
 4. Three-dimensional printed microfluidic mixer/extractor for cell lysis and lipidomic profiling by matrix-assisted laser desorption/ionization mass spectrometry <br>
