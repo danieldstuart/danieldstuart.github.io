@@ -7,10 +7,10 @@ layout: home
 <div markdown="1" class="body">
 
 <div markdown="1" class="center"> 
-![Defense](images/Thesis.jpg){: width="300" height="400"}
-![Dog](images/Dog.jpg){: width="300" height="400"}
-![Me and Melinda](images/Daniel.jpg){: width="300" height="400"}
 ![Cleanroom photo](images/DanielCleanroom.JPG){: width="300" height="400"}
+![Defense](images/Thesis.jpg){: width="500" height="400"}
+![Dog](images/Dog.jpg){: width="500" height="400"}
+![Me and Melinda](images/Daniel.jpg){: width="300" height="400"}
 </div>
 
 My name is Daniel David Stuart and I have my PhD in Analytical Chemistry and am currently working as a post-doc in the [Cheng Lab](https://chenglab.ucr.edu/) at the University of California, Riverside. I received my Masters in March 2020 and defended my thesis on December 12, 2023.
