@@ -42,23 +42,27 @@ If you are interested in my publications a list is provided below. They can also
 ## Presentations ##
 <div markdown="1" class="list">
 
-1. UC Chemical Symposium, UCLA Lake Arrowhead Lodge, CA (April 24, 2023) <br>
-Understanding Pressure and Refractive Index Relationships to Enable Gas Sensing by Surface Plasmon Resonance <br>
-Awarded Best Analytical Chemistry Talk
+1. UC Chemical Symposium, UCLA Lake Arrowhead Lodge, CA (April 9, 2024) <br>
+Rapid MALDI-MS Based Identification of Methicillin Resistance and Bacterial Strain Classification Enabled by Machine Learning <br>
+Awarded Best Environmental & Analytical Division Talk
 
-2. SciX 2022, Microfluidic Bioanalysis (October 4, 2022)  
+2. UC Chemical Symposium, UCLA Lake Arrowhead Lodge, CA (April 24, 2023) <br>
+Understanding Pressure and Refractive Index Relationships to Enable Gas Sensing by Surface Plasmon Resonance <br>
+Awarded Best Analytical Chemistry Division Talk
+
+3. SciX 2022, Microfluidic Bioanalysis (October 4, 2022)  
 Biomimetic Lipid Membranes as Effective Antifouling Interfaces for Sensing in Clinically Relevant Matrices
 
-3. Pittcon 2022, Bioanalytics & Life Science, Virtually (April 5, 2022)  
+4. Pittcon 2022, Bioanalytics & Life Science, Virtually (April 5, 2022)  
 Biomimetic Lipid Membranes for Effective Antifouling on a Biosensor Surface with Clinically Relevant Matrices 
 
-4. UCR, Analytical Chemistry Seminar, Virtually (January 20, 2021)  
+5. UCR, Analytical Chemistry Seminar, Virtually (January 20, 2021)  
 Membrane Mimics Towards Novel Interfaces and Study of Biomolecular Interactions 
 
-5. Pittcon Conference and Expo, McCormick Place, Chicago, IL (March 4, 2020)  
+6. Pittcon Conference and Expo, McCormick Place, Chicago, IL (March 4, 2020)  
 Characterization of Transport of Drug Analogs through Membrane Mimics with SPR Spectroscopy and MALDI-MS
 		
-6. UC Chemical Symposium, UCLA Lake Arrowhead Lodge, CA (March 25, 2019)  
+7. UC Chemical Symposium, UCLA Lake Arrowhead Lodge, CA (March 25, 2019)  
 Novel Characterization of Drug Analog Membrane Transport Through Coupled SPR-MALDI Analysis
 </div>
 </div>
