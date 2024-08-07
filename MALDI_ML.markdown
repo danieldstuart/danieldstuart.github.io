@@ -42,19 +42,20 @@ For data split into folders labeled by their classifier (i.e bacterial species, 
 <div markdown="1" class="code">
 ```
 for (x in 1:foldernum){
-  setwd("~/R/Spectra Analysis and ML/Place Data Here")
-  setwd(folders[x]) # changes working directory to next folder 
-  directory <- list.files(pattern="*.mzxml", recursive = T) # pulls out spectra within selected folder
+  setwd("~/R/C Elegans/Place Data Here")
+  setwd(folders[x]) #changes working directory to next folder 
+  directory <- list.files(pattern="*.mzxml", recursive = T) #pulls out spectra within selected folder
   s1 <- importMzXml(directory)
+  classifier1 <- as.character(c(rep(classes[x], length(s1)))) #creates classifer1 table as temporary store to append
   outtest <- exists("s")
   if(outtest == FALSE){
-  s <- s1 # combines all the pulled spectra together
-  classifier <- as.character(c(rep(classes[x], length(s1)))) # creates classifier table
+    s <- s1 #combines all the pulled spectra together
+    classifier <- classifier1 #creates classifier table
   }
-  else
+  else {
   s <- c(s,s1)
-  classifier1 <- as.character(c(rep(classes[x], length(s1)))) # creates classifer1 table as temporary store to append
-  classifier <- as.character(c(classifier, classifier1)) # combines class names from each iteration
+  classifier <- as.character(c(classifier, classifier1)) #combines class names from each iteration
+  }
 }
 ```
 </div>
