@@ -51,6 +51,7 @@ for (x in 1:foldernum){
   s <- s1 # combines all the pulled spectra together
   classifier <- as.character(c(rep(classes[x], length(s1)))) # creates classifier table
   }
+  else
   s <- c(s,s1)
   classifier1 <- as.character(c(rep(classes[x], length(s1)))) # creates classifer1 table as temporary store to append
   classifier <- as.character(c(classifier, classifier1)) # combines class names from each iteration
