@@ -28,6 +28,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  danieldstuart
 
+google_analytics: G-7LGJHH4GMP
 timezone: America/Los_Angeles
 
 header_pages:
