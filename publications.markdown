@@ -16,9 +16,9 @@ If you are interested in my publications a list is provided below. They can also
 ## Publications ##
 <div markdown="1" class="list">
 1. Surface Plasmon Resonance to Trace and Measure Cancer Cell Apoptosis using Morphological and Refractive Index Changes <br>
-[Nor Akmaliza Rais, Fatimah Abouhajar, Daniel D. Stuart, Westley Van Zant and Quan Cheng <em> Front. Anal. Sci. </em> <strong>2024 </strong>] (https://doi.org/10.3389/frans.2024.1518243)
+[Nor Akmaliza Rais, Fatimah Abouhajar, Daniel D. Stuart, Westley Van Zant and Quan Cheng <em> Front. Anal. Sci. </em> <strong>2024 </strong>](https://doi.org/10.3389/frans.2024.1518243)
 2. Novel and Rapid Analytical Platform Development Enabled by Advances in 3D Printing <br>
-[Alexander S. Malinick, Cole P. Ebel, Daniel D. Stuart, Santino N. Valiulis, Victor A. Hanson and Quan Cheng <em> Front. Anal. Sci. </em> <strong>2024 </strong>] (https://doi.org/10.3389/frans.2024.1518243)
+[Alexander S. Malinick, Cole P. Ebel, Daniel D. Stuart, Santino N. Valiulis, Victor A. Hanson and Quan Cheng <em> Front. Anal. Sci. </em> <strong>2024 </strong>](https://doi.org/10.3389/frans.2024.1518243)
 3. Characterization of a Charged Biomimetic Lipid Membrane for Unique Antifouling Effects against Clinically Relevant Matrices in Biosensing <br>
 [Daniel D. Stuart, Caleb D. Pike, Alexander S. Malinick, and Quan Cheng <em> ACS Applied Materials & Interfaces </em> <strong>2024 </strong>](https://pubs.acs.org/doi/10.1021/acsami.4c14563)
 4. Trends in surface plasmon resonance biosensing: materials, methods, and machine learning <br>
