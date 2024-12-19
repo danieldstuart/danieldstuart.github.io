@@ -50,30 +50,30 @@ If you are interested in my publications a list is provided below. They can also
 ## Presentations ##
 <div markdown="1" class="list">
 
-1. Pacific Union College, Angwin, CA (November 14, 2024) <br>
-PUC to PhD: Biosensing and Bioinformatics
+1. PUC to PhD: Biosensing and Bioinformatics <br>
+Pacific Union College, Angwin, CA (November 14, 2024)
 
-2. UC Chemical Symposium, UCLA Lake Arrowhead Lodge, CA (April 9, 2024) <br>
-Rapid MALDI-MS Based Identification of Methicillin Resistance and Bacterial Strain Classification Enabled by Machine Learning <br>
+2. Rapid MALDI-MS Based Identification of Methicillin Resistance and Bacterial Strain Classification Enabled by Machine Learning <br>
+UC Chemical Symposium, UCLA Lake Arrowhead Lodge, CA (April 9, 2024) <br>
 Awarded Best Environmental & Analytical Division Talk
 
-3. UC Chemical Symposium, UCLA Lake Arrowhead Lodge, CA (April 24, 2023) <br>
-Understanding Pressure and Refractive Index Relationships to Enable Gas Sensing by Surface Plasmon Resonance <br>
-Awarded Best Analytical Chemistry Division Talk
+3. Understanding Pressure and Refractive Index Relationships to Enable Gas Sensing by Surface Plasmon Resonance <br>
+UC Chemical Symposium, UCLA Lake Arrowhead Lodge, CA (April 24, 2023) <br>
+Awarded Best Analytical Division Talk
 
-4. SciX 2022, Microfluidic Bioanalysis (October 4, 2022)  
-Biomimetic Lipid Membranes as Effective Antifouling Interfaces for Sensing in Clinically Relevant Matrices
+4. Biomimetic Lipid Membranes as Effective Antifouling Interfaces for Sensing in Clinically Relevant Matrices <br>
+SciX 2022, Microfluidic Bioanalysis (October 4, 2022)
 
-5. Pittcon 2022, Bioanalytics & Life Science, Virtually (April 5, 2022)  
-Biomimetic Lipid Membranes for Effective Antifouling on a Biosensor Surface with Clinically Relevant Matrices 
+5. Biomimetic Lipid Membranes for Effective Antifouling on a Biosensor Surface with Clinically Relevant Matrices <br>
+Pittcon 2022, Bioanalytics & Life Science, Virtually (April 5, 2022)  
+ 
+6. Membrane Mimics Towards Novel Interfaces and Study of Biomolecular Interactions <br>
+UCR, Analytical Chemistry Seminar, Virtually (January 20, 2021)
 
-6. UCR, Analytical Chemistry Seminar, Virtually (January 20, 2021)  
-Membrane Mimics Towards Novel Interfaces and Study of Biomolecular Interactions 
-
-7. Pittcon Conference and Expo, McCormick Place, Chicago, IL (March 4, 2020)  
-Characterization of Transport of Drug Analogs through Membrane Mimics with SPR Spectroscopy and MALDI-MS
+7. Characterization of Transport of Drug Analogs through Membrane Mimics with SPR Spectroscopy and MALDI-MS <br>
+Pittcon Conference and Expo, McCormick Place, Chicago, IL (March 4, 2020)  
 		
-8. UC Chemical Symposium, UCLA Lake Arrowhead Lodge, CA (March 25, 2019)  
-Novel Characterization of Drug Analog Membrane Transport Through Coupled SPR-MALDI Analysis
+8. Novel Characterization of Drug Analog Membrane Transport Through Coupled SPR-MALDI Analysis <br>
+UC Chemical Symposium, UCLA Lake Arrowhead Lodge, CA (March 25, 2019)  
 </div>
 </div>
