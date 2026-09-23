@@ -9,6 +9,18 @@ Through my time in graduate school I have worked on various projects, an overvie
 <br>
 
 <div markdown="1" class="center">
+## [MEMS Layer Builder]({{ site.baseurl }}{% link LayerBuilder.markdown %}) ##
+</div>
+<div markdown="1" class="center">
+![Machine Learning MALDI](images/MLMALDIMS.jpeg){: width="500" }
+</div>
+When working on device design, fabrication, and process development often wished I could easily add/remove layers and visualize the device and its layers. So I built out some python code to do this. Enabling 2D/3D views of a device based on a set of layers with patterns that can be pulled from GDS/STL/STEP files or built in the software. 
+
+<br>
+
+<br>
+
+<div markdown="1" class="center">
 ## [Processing and Machine Learning Analysis of MALDI Spectra]({{ site.baseurl }}{% link MALDI_ML.markdown %}) ##
 </div>
 <div markdown="1" class="center">
